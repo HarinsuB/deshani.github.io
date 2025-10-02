@@ -209,9 +209,15 @@ Additional Details: ${formData.additionalDetails || 'None'}`;
                         <SelectValue placeholder="Select a service" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="Cleaning">Cleaning</SelectItem>
-                        <SelectItem value="Cooking">Cooking</SelectItem>
-                        <SelectItem value="Baby Sitting">Baby Sitting</SelectItem>
+                        <SelectItem value="House Cleaning">House Cleaning</SelectItem>
+                        <SelectItem value="Office Cleaning">Office Cleaning</SelectItem>
+                        <SelectItem value="Kitchen Cleaning">Kitchen Cleaning</SelectItem>
+                        <SelectItem value="Window Cleaning">Window Cleaning</SelectItem>
+                        <SelectItem value="Room Cleaning">Room Cleaning</SelectItem>
+                        <SelectItem value="Deep Cleaning">Deep Cleaning</SelectItem>
+                        <SelectItem value="Laundry and Ironing">Laundry and Ironing</SelectItem>
+                        <SelectItem value="Party Helpers/Cleaning">Party Helpers/Cleaning</SelectItem>
+                        <SelectItem value="Babysitting">Babysitting</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
