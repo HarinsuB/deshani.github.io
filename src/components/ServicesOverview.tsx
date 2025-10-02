@@ -1,33 +1,87 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Sparkles, ChefHat, Heart } from "lucide-react";
-import cleaningImg from "@/assets/cleaning-service.jpg";
-import cookingImg from "@/assets/cooking-service.jpg";
+import { Home, Building2, ChefHat, Sparkles, Bed, Loader, Shirt, PartyPopper, Baby } from "lucide-react";
+import houseCleaningImg from "@/assets/house-cleaning.jpg";
+import officeCleaningImg from "@/assets/office-cleaning.jpg";
+import kitchenCleaningImg from "@/assets/kitchen-cleaning.jpg";
+import windowCleaningImg from "@/assets/window-cleaning.jpg";
+import roomCleaningImg from "@/assets/room-cleaning.jpg";
+import deepCleaningImg from "@/assets/deep-cleaning.jpg";
+import laundryIroningImg from "@/assets/laundry-ironing.jpg";
+import partyHelpersImg from "@/assets/party-helpers.jpg";
 import babysittingImg from "@/assets/babysitting-service.jpg";
 
 const ServicesOverview = () => {
   const services = [
     {
-      id: "cleaning",
-      title: "Cleaning",
-      description: "From regular upkeep to deep cleans, our trained team leaves your space spotless.",
-      icon: <Sparkles className="w-8 h-8 text-brand-green" />,
-      image: cleaningImg,
-      features: ["Regular Maintenance", "Deep Cleaning", "Office Cleaning", "Eco-friendly Products"]
+      id: "house-cleaning",
+      title: "House Cleaning",
+      description: "Complete home cleaning services to keep your house spotless and comfortable.",
+      icon: <Home className="w-8 h-8 text-brand-green" />,
+      image: houseCleaningImg,
+      features: ["Living Areas", "Bedrooms", "Bathrooms", "Regular Maintenance"]
     },
     {
-      id: "cooking",
-      title: "Cooking", 
-      description: "Home-style meal prep tailored to your taste, nutrition, and schedule.",
+      id: "office-cleaning",
+      title: "Office Cleaning",
+      description: "Professional cleaning for offices and commercial spaces to maintain a productive environment.",
+      icon: <Building2 className="w-8 h-8 text-brand-green" />,
+      image: officeCleaningImg,
+      features: ["Workspaces", "Meeting Rooms", "Common Areas", "Daily/Weekly Service"]
+    },
+    {
+      id: "kitchen-cleaning",
+      title: "Kitchen Cleaning",
+      description: "Specialized kitchen cleaning for a hygienic and sparkling cooking space.",
       icon: <ChefHat className="w-8 h-8 text-brand-green" />,
-      image: cookingImg,
-      features: ["Traditional Sri Lankan", "International Cuisine", "Meal Planning", "Dietary Requirements"]
+      image: kitchenCleaningImg,
+      features: ["Appliances", "Countertops", "Cabinets", "Deep Sanitization"]
+    },
+    {
+      id: "window-cleaning",
+      title: "Window Cleaning",
+      description: "Crystal clear windows inside and out for a brighter, cleaner view.",
+      icon: <Sparkles className="w-8 h-8 text-brand-green" />,
+      image: windowCleaningImg,
+      features: ["Interior & Exterior", "High Windows", "Frames & Sills", "Streak-Free Finish"]
+    },
+    {
+      id: "room-cleaning",
+      title: "Room Cleaning Services",
+      description: "Thorough room-by-room cleaning customized to your specific needs.",
+      icon: <Bed className="w-8 h-8 text-brand-green" />,
+      image: roomCleaningImg,
+      features: ["Dusting", "Vacuuming", "Organizing", "Fresh Linens"]
+    },
+    {
+      id: "deep-cleaning",
+      title: "Deep Cleaning Services",
+      description: "Comprehensive deep cleaning that reaches every corner and surface.",
+      icon: <Loader className="w-8 h-8 text-brand-green" />,
+      image: deepCleaningImg,
+      features: ["Behind Furniture", "Hard-to-Reach Areas", "Detailed Scrubbing", "Full Sanitization"]
+    },
+    {
+      id: "laundry-ironing",
+      title: "Laundry and Ironing",
+      description: "Professional laundry and ironing services for perfectly fresh and pressed clothes.",
+      icon: <Shirt className="w-8 h-8 text-brand-green" />,
+      image: laundryIroningImg,
+      features: ["Washing", "Drying", "Ironing", "Folding & Organizing"]
+    },
+    {
+      id: "party-helpers",
+      title: "Party Helpers/Cleaning",
+      description: "Pre and post-party cleaning support to make your event stress-free.",
+      icon: <PartyPopper className="w-8 h-8 text-brand-green" />,
+      image: partyHelpersImg,
+      features: ["Event Setup", "During Party Support", "Post-Party Cleanup", "Quick Turnaround"]
     },
     {
       id: "babysitting",
-      title: "Baby Sitting",
+      title: "Babysitting",
       description: "Caring, vetted babysitters who prioritize safety, play, and routine.",
-      icon: <Heart className="w-8 h-8 text-brand-green" />,
+      icon: <Baby className="w-8 h-8 text-brand-green" />,
       image: babysittingImg,
       features: ["Qualified Caregivers", "Educational Activities", "Safety First", "Flexible Hours"]
     }

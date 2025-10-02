@@ -5,61 +5,202 @@ import ServiceDetail from "@/components/ServiceDetail";
 import BookingForm from "@/components/BookingForm";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import cleaningImg from "@/assets/cleaning-service.jpg";
-import cookingImg from "@/assets/cooking-service.jpg";
+import houseCleaningImg from "@/assets/house-cleaning.jpg";
+import officeCleaningImg from "@/assets/office-cleaning.jpg";
+import kitchenCleaningImg from "@/assets/kitchen-cleaning.jpg";
+import windowCleaningImg from "@/assets/window-cleaning.jpg";
+import roomCleaningImg from "@/assets/room-cleaning.jpg";
+import deepCleaningImg from "@/assets/deep-cleaning.jpg";
+import laundryIroningImg from "@/assets/laundry-ironing.jpg";
+import partyHelpersImg from "@/assets/party-helpers.jpg";
 import babysittingImg from "@/assets/babysitting-service.jpg";
 
 const Index = () => {
   const serviceDetails = [
     {
-      id: "cleaning",
-      title: "Professional Cleaning Services",
-      description: "From regular upkeep to deep cleans, our trained team leaves your space spotless. We use eco-friendly products and proven techniques to ensure your home or office is not just clean, but healthy and inviting.",
-      image: cleaningImg,
+      id: "house-cleaning",
+      title: "House Cleaning",
+      description: "Complete home cleaning services to keep your house spotless and comfortable. Our professional team ensures every room is thoroughly cleaned and maintained to the highest standards.",
+      image: houseCleaningImg,
       features: [
-        "Regular weekly/monthly cleaning",
-        "Deep cleaning services",
-        "Office and commercial cleaning",
-        "Eco-friendly cleaning products",
-        "Post-construction cleanup",
-        "Move-in/move-out cleaning"
+        "Living room and common areas",
+        "All bedrooms and bathrooms",
+        "Dusting and vacuuming",
+        "Floor cleaning and mopping",
+        "Surface sanitization",
+        "Trash removal"
       ],
       benefits: [
-        "Save time for what matters most",
-        "Professional-grade equipment",
-        "Fully insured and bonded staff",
-        "Flexible scheduling",
-        "Consistent quality standards",
-        "Affordable pricing packages"
+        "Consistent home cleanliness",
+        "More free time for family",
+        "Professional cleaning standards",
+        "Customizable cleaning plans",
+        "Trusted and reliable staff",
+        "Affordable weekly/monthly rates"
       ]
     },
     {
-      id: "cooking",
-      title: "Home-Style Cooking Services",
-      description: "Home-style meal prep tailored to your taste, nutrition, and schedule. Our experienced cooks specialize in traditional Sri Lankan cuisine while also preparing international dishes to suit your family's preferences.",
-      image: cookingImg,
+      id: "office-cleaning",
+      title: "Office Cleaning",
+      description: "Professional cleaning for offices and commercial spaces to maintain a productive, healthy work environment. We work around your schedule to minimize disruption.",
+      image: officeCleaningImg,
       features: [
-        "Traditional Sri Lankan cuisine",
-        "International meal preparation",
-        "Custom meal planning",
-        "Dietary restriction accommodation",
-        "Fresh ingredient sourcing",
-        "Meal prep and storage"
+        "Workstation cleaning",
+        "Meeting room maintenance",
+        "Restroom sanitization",
+        "Kitchen and break room cleaning",
+        "Floor care and vacuuming",
+        "Trash and recycling management"
       ],
       benefits: [
-        "Nutritious home-cooked meals",
-        "Time-saving meal solutions",
-        "Cultural authenticity",
-        "Cost-effective dining",
-        "Customized to your taste",
-        "Family-friendly options"
+        "Professional workplace appearance",
+        "Healthier work environment",
+        "Increased employee productivity",
+        "Flexible scheduling options",
+        "Commercial-grade equipment",
+        "Reliable daily or weekly service"
+      ],
+      reverse: true
+    },
+    {
+      id: "kitchen-cleaning",
+      title: "Kitchen Cleaning",
+      description: "Specialized kitchen cleaning for a hygienic and sparkling cooking space. We tackle grease, grime, and food residue to ensure your kitchen is spotless and safe.",
+      image: kitchenCleaningImg,
+      features: [
+        "Appliance cleaning (oven, fridge, microwave)",
+        "Countertop and backsplash scrubbing",
+        "Cabinet exterior cleaning",
+        "Sink and faucet sanitization",
+        "Floor mopping and degreasing",
+        "Trash disposal"
+      ],
+      benefits: [
+        "Food-safe cleaning products",
+        "Deep grease removal",
+        "Sanitized cooking surfaces",
+        "Fresh and clean kitchen",
+        "Expert stain removal",
+        "Regular maintenance available"
+      ]
+    },
+    {
+      id: "window-cleaning",
+      title: "Window Cleaning",
+      description: "Crystal clear windows inside and out for a brighter, cleaner view. Our skilled team uses professional equipment to deliver streak-free, spotless windows.",
+      image: windowCleaningImg,
+      features: [
+        "Interior and exterior cleaning",
+        "High and hard-to-reach windows",
+        "Window frames and sills",
+        "Screen cleaning",
+        "Streak-free finish",
+        "Commercial and residential"
+      ],
+      benefits: [
+        "Enhanced natural lighting",
+        "Improved curb appeal",
+        "Extended window life",
+        "Professional equipment used",
+        "Safety measures in place",
+        "Scheduled maintenance plans"
+      ],
+      reverse: true
+    },
+    {
+      id: "room-cleaning",
+      title: "Room Cleaning Services",
+      description: "Thorough room-by-room cleaning customized to your specific needs. Whether it's a single room or your entire home, we provide detailed attention to every space.",
+      image: roomCleaningImg,
+      features: [
+        "Dusting all surfaces",
+        "Vacuuming and floor care",
+        "Bed making and linen change",
+        "Closet organization",
+        "Furniture cleaning",
+        "Air freshening"
+      ],
+      benefits: [
+        "Customizable service",
+        "Attention to detail",
+        "Organized living spaces",
+        "Fresh and clean rooms",
+        "Flexible scheduling",
+        "Affordable per-room pricing"
+      ]
+    },
+    {
+      id: "deep-cleaning",
+      title: "Deep Cleaning Services",
+      description: "Comprehensive deep cleaning that reaches every corner and surface. Perfect for seasonal cleaning, move-ins, or when your home needs extra attention.",
+      image: deepCleaningImg,
+      features: [
+        "Behind and under furniture",
+        "Baseboards and molding",
+        "Light fixtures and ceiling fans",
+        "Inside appliances",
+        "Detailed bathroom scrubbing",
+        "Complete floor care"
+      ],
+      benefits: [
+        "Thorough home refresh",
+        "Removes built-up dirt and grime",
+        "Allergen reduction",
+        "Professional-grade cleaning",
+        "Perfect for special occasions",
+        "Comprehensive checklist included"
+      ],
+      reverse: true
+    },
+    {
+      id: "laundry-ironing",
+      title: "Laundry and Ironing",
+      description: "Professional laundry and ironing services for perfectly fresh and pressed clothes. Save time and enjoy crisp, clean garments without the hassle.",
+      image: laundryIroningImg,
+      features: [
+        "Washing and drying",
+        "Professional ironing",
+        "Folding and organizing",
+        "Stain treatment",
+        "Delicate garment care",
+        "Linen and bedding service"
+      ],
+      benefits: [
+        "Time-saving convenience",
+        "Professional results",
+        "Garment care expertise",
+        "Wrinkle-free clothing",
+        "Pick-up and delivery available",
+        "Competitive pricing"
+      ]
+    },
+    {
+      id: "party-helpers",
+      title: "Party Helpers/Cleaning",
+      description: "Pre and post-party cleaning support to make your event stress-free. Focus on your guests while we handle the setup and cleanup.",
+      image: partyHelpersImg,
+      features: [
+        "Pre-party space preparation",
+        "Event setup assistance",
+        "During-party support",
+        "Post-party cleanup",
+        "Kitchen and dining area focus",
+        "Quick turnaround service"
+      ],
+      benefits: [
+        "Stress-free entertaining",
+        "More time with guests",
+        "Professional cleanup",
+        "Fast and efficient service",
+        "Flexible staffing options",
+        "Same-day cleanup available"
       ],
       reverse: true
     },
     {
       id: "babysitting",
-      title: "Trusted Babysitting Services",
-      description: "Caring, vetted babysitters who prioritize safety, play, and routine. Our qualified caregivers provide a nurturing environment where your children can learn, play, and thrive while you're away.",
+      title: "Babysitting",
+      description: "Caring, vetted babysitters who prioritize safety, play, and routine. Our qualified caregivers provide a nurturing environment where your children can learn, play, and thrive.",
       image: babysittingImg,
       features: [
         "Background-checked caregivers",
