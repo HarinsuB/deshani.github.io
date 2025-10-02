@@ -118,27 +118,142 @@ Additional Details: ${formData.additionalDetails || 'None'}`;
     }, 5000);
   };
 
-  if (isSubmitted) {
-    return (
-      <section id="booking" className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center">
-            <Card className="border-brand-green shadow-strong">
-              <CardContent className="p-8">
-                <div className="w-16 h-16 bg-brand-green rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-brand-teal mb-4">Request Submitted!</h3>
-                <p className="text-brand-gray text-lg">
-                  Your request has been submitted. Our team will contact you soon!
-                </p>
-              </CardContent>
-            </Card>
+  // Success popup overlay with enhanced animations
+  const SuccessPopup = () => (
+    <div className="fixed inset-0 backdrop-blur-success flex items-center justify-center z-50 animate-in fade-in duration-500">
+      {/* Floating confetti elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-green-400 rounded-full animate-confetti delay-300"></div>
+        <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-yellow-400 rounded-full animate-confetti delay-500"></div>
+        <div className="absolute top-1/2 left-1/3 w-2 h-2 bg-blue-400 rounded-full animate-confetti delay-700"></div>
+        <div className="absolute top-2/3 right-1/3 w-3 h-3 bg-pink-400 rounded-full animate-confetti delay-400"></div>
+        <div className="absolute top-1/4 right-1/2 w-2 h-2 bg-purple-400 rounded-full animate-confetti delay-600"></div>
+      </div>
+      
+      <div className="bg-white rounded-3xl p-10 mx-4 max-w-lg w-full shadow-2xl animate-slide-up relative overflow-hidden">
+        {/* Background gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-white to-blue-50 opacity-50"></div>
+        
+        <div className="text-center relative z-10">
+          {/* Animated checkmark with glow */}
+          <div className="w-24 h-24 bg-gradient-to-r from-green-400 via-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-8 animate-float animate-pulse-glow shadow-lg">
+            <svg
+              className="w-12 h-12 text-white animate-in zoom-in duration-700 delay-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={3}
+                d="M5 13l4 4L19 7"
+                className="animate-draw-in"
+                style={{
+                  strokeDasharray: '100',
+                  strokeDashoffset: '100',
+                  animation: 'draw-in 1.2s ease-out 0.8s forwards'
+                }}
+              />
+            </svg>
+          </div>
+          
+          {/* Success message with staggered animation */}
+          <div className="space-y-3 mb-8">
+            <p className="text-gray-700 text-xl font-medium animate-in slide-in-from-bottom-2 duration-500 delay-400">
+              Your request has been submitted successfully!
+            </p>
+            <p className="text-green-600 text-lg font-semibold animate-in slide-in-from-bottom-2 duration-500 delay-500">
+              ✨ Our team will contact you soon! ✨
+            </p>
+          </div>
+          
+          {/* Enhanced loading animation */}
+          <div className="flex justify-center items-center space-x-2 mb-6 animate-in fade-in duration-500 delay-600">
+            <div className="flex space-x-1">
+              <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-green-600 rounded-full animate-bounce-enhanced"></div>
+              <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-green-600 rounded-full animate-bounce-enhanced delay-100"></div>
+              <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-green-600 rounded-full animate-bounce-enhanced delay-200"></div>
+            </div>
+          </div>
+          
+          {/* Redirecting message with icon */}
+          <div className="flex items-center justify-center space-x-2 text-gray-500 animate-in fade-in duration-500 delay-800">
+            <svg className="w-5 h-5 text-green-500 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+            <p className="text-sm font-medium">
+              Redirecting to WhatsApp...
+            </p>
           </div>
         </div>
-      </section>
+        
+        {/* Decorative elements */}
+        <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-yellow-200 to-yellow-300 rounded-full opacity-20 animate-pulse"></div>
+        <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-blue-200 to-blue-300 rounded-full opacity-20 animate-pulse delay-300"></div>
+      </div>
+    </div>
+  );
+
+  if (isSubmitted) {
+    return (
+      <>
+        <section id="booking" className="py-20 bg-muted">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-brand-teal mb-6">
+                Book a Service
+              </h2>
+              <p className="text-xl text-brand-gray max-w-2xl mx-auto">
+                Ready to get started? Fill out our quick form and we'll be in touch shortly
+              </p>
+            </div>
+
+            <div className="max-w-2xl mx-auto">
+              <Card className="shadow-strong border-0 opacity-50">
+                <CardHeader>
+                  <CardTitle className="text-2xl text-brand-teal">Service Request</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <form className="space-y-6">
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="fullName" className="text-brand-teal font-medium">
+                          Full Name *
+                        </Label>
+                        <Input
+                          className="mt-1"
+                          placeholder="Enter your full name"
+                          disabled
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="contactNumber" className="text-brand-teal font-medium">
+                          Contact Number *
+                        </Label>
+                        <Input
+                          className="mt-1"
+                          placeholder="Your phone number"
+                          disabled
+                        />
+                      </div>
+                    </div>
+                    <Button
+                      variant="cta"
+                      size="lg"
+                      className="w-full text-lg py-6 opacity-50"
+                      disabled
+                    >
+                      Submit Request
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+        <SuccessPopup />
+      </>
     );
   }
 

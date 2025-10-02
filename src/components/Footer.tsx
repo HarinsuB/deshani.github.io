@@ -21,7 +21,7 @@ const Footer = () => {
               <span className="text-brand-green ml-1">Cleaning & Hospitality</span>
             </div>
             <p className="text-white/80 mb-4">
-              Trusted, professional services for homes and offices across Sri Lanka. 
+              Trusted, professional services for homes and offices across Qatar.
               Your comfort and satisfaction are our priority.
             </p>
             <Button
@@ -48,7 +48,7 @@ const Footer = () => {
         <div className="border-t border-white/20 pt-8 text-center text-white/60">
           <p>&copy; {currentYear} Deshani Cleaning & Hospitality. All rights reserved.</p>
           <p className="mt-2">
-            Serving homes and offices across Sri Lanka with pride since 2020.
+            Serving homes and offices across Qatar with pride since 2020.
           </p>
         </div>
       </div>

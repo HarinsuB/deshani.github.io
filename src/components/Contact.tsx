@@ -72,7 +72,7 @@ const Contact = () => {
               <h3 className="font-semibold text-brand-teal mb-2">Coverage</h3>
               <p className="text-brand-gray text-sm">
                 All Districts<br />
-                Across Sri Lanka
+                Across Qatar
               </p>
             </CardContent>
           </Card>

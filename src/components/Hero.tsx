@@ -31,7 +31,7 @@ const Hero = () => {
         </h1>
         
         <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto leading-relaxed">
-          Reliable, trained staff for homes and offices across Sri Lanka
+          Reliable, trained staff for homes and offices across Qatar
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
