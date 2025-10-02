@@ -56,12 +56,15 @@ const BookingForm = () => {
     return true;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!validateForm()) {
       return;
     }
+
+    // Show confirmation immediately
+    setIsSubmitted(true);
 
     // Compose WhatsApp message
     const message = `New Booking Request - Deshani Cleaning & Hospitality
@@ -75,13 +78,29 @@ Engagement: ${formData.engagement}
 Remark: ${formData.remark || 'None'}
 Additional Details: ${formData.additionalDetails || 'None'}`;
 
-    // Open WhatsApp
-    const owner = "94702313148";
-    const text = encodeURIComponent(message);
-    window.open(`https://wa.me/${owner}?text=${text}`, "_blank");
+    // Send WhatsApp message after showing success message
+    setTimeout(() => {
+      try {
+        // Log the submission for debugging
+        console.log('Service Request Submitted:', {
+          timestamp: new Date().toISOString(),
+          formData,
+          message
+        });
 
-    // Show confirmation
-    setIsSubmitted(true);
+        // Open WhatsApp Web normally (customer will see the redirect)
+        const owner = "94702313148";
+        const text = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/${owner}?text=${text}`;
+        
+        // Open WhatsApp in a new tab/window
+        window.open(whatsappUrl, '_blank');
+
+      } catch (error) {
+        console.error('Error sending WhatsApp message:', error);
+        // Success message already shown to user
+      }
+    }, 2000); // 2-second delay to let customer see the success message
 
     // Reset form after a delay
     setTimeout(() => {
@@ -113,7 +132,7 @@ Additional Details: ${formData.additionalDetails || 'None'}`;
                 </div>
                 <h3 className="text-2xl font-bold text-brand-teal mb-4">Request Submitted!</h3>
                 <p className="text-brand-gray text-lg">
-                  Your request has been submitted. We will contact you via phone call shortly.
+                  Your request has been submitted. Our team will contact you soon!
                 </p>
               </CardContent>
             </Card>
