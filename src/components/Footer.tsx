@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <footer className="bg-brand-teal text-white py-16">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <div className="max-w-2xl mx-auto mb-8 text-center">
           {/* Brand */}
           <div>
             <div className="text-2xl font-bold mb-4">
@@ -30,42 +30,6 @@ const Footer = () => {
             >
               Contact Us
             </Button>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
-            <nav className="space-y-2">
-              {[
-                { label: "Home", id: "hero" },
-                { label: "Services", id: "services" },
-                { label: "Cleaning", id: "cleaning" },
-                { label: "Cooking", id: "cooking" },
-                { label: "Baby Sitting", id: "babysitting" },
-                { label: "Book Now", id: "booking" },
-              ].map((link) => (
-                <button
-                  key={link.id}
-                  onClick={() => scrollToSection(link.id)}
-                  className="block text-white/80 hover:text-brand-green transition-colors"
-                >
-                  {link.label}
-                </button>
-              ))}
-            </nav>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Our Services</h3>
-            <ul className="space-y-2 text-white/80">
-              <li>• Regular House Cleaning</li>
-              <li>• Deep Cleaning Services</li>
-              <li>• Traditional Sri Lankan Cooking</li>
-              <li>• International Cuisine</li>
-              <li>• Professional Babysitting</li>
-              <li>• Office Cleaning</li>
-            </ul>
           </div>
         </div>
 
