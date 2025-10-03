@@ -31,18 +31,18 @@ const Contact = () => {
                 <Phone className="w-8 h-8 text-brand-green" />
               </div>
               <h3 className="font-semibold text-brand-teal mb-2">Phone</h3>
-              <div className="space-y-1">
+              <div className="space-y-1 text-center">
                 <Button
                   variant="link"
                   onClick={openWhatsApp1}
-                  className="text-brand-gray hover:text-brand-green p-0 h-auto font-normal block text-left"
+                  className="text-brand-gray hover:text-brand-green p-0 h-auto font-normal block"
                 >
                   +974 77 651 997
                 </Button>
                 <Button
                   variant="link"
                   onClick={openWhatsApp2}
-                  className="text-brand-gray hover:text-brand-green p-0 h-auto font-normal block text-left"
+                  className="text-brand-gray hover:text-brand-green p-0 h-auto font-normal block"
                 >
                   +974 66 690 877
                 </Button>
