@@ -89,7 +89,7 @@ Additional Details: ${formData.additionalDetails || 'None'}`;
         });
 
         // Open WhatsApp Web normally (customer will see the redirect)
-        const owner = "94702313148";
+        const owner = "97477651997";
         const text = encodeURIComponent(message);
         const whatsappUrl = `https://wa.me/${owner}?text=${text}`;
         

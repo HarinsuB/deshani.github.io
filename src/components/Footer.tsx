@@ -24,9 +24,12 @@ const Footer = () => {
               Trusted, professional services for homes and offices across Qatar.
               Your comfort and satisfaction are our priority.
             </p>
+            <p className="text-white/90 mb-4">
+              Contact us at +974 77 651 997 or +974 66 690 877
+            </p>
             <Button
               variant="secondary"
-              onClick={() => window.open("https://wa.me/94702313148", "_blank")}
+              onClick={() => window.open("https://wa.me/97477651997", "_blank")}
             >
               Contact Us
             </Button>

@@ -3,8 +3,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Phone, Mail, Clock, MapPin } from "lucide-react";
 
 const Contact = () => {
-  const openWhatsApp = () => {
-    window.open("https://wa.me/94702313148", "_blank");
+  const openWhatsApp1 = () => {
+    window.open("https://wa.me/97477651997", "_blank");
+  };
+
+  const openWhatsApp2 = () => {
+    window.open("https://wa.me/97466690877", "_blank");
   };
 
   return (
@@ -26,13 +30,22 @@ const Contact = () => {
                 <Phone className="w-8 h-8 text-brand-green" />
               </div>
               <h3 className="font-semibold text-brand-teal mb-2">Phone</h3>
-              <Button
-                variant="link"
-                onClick={openWhatsApp}
-                className="text-brand-gray hover:text-brand-green p-0 h-auto font-normal"
-              >
-                +94 70 231 3148
-              </Button>
+              <div className="space-y-1">
+                <Button
+                  variant="link"
+                  onClick={openWhatsApp1}
+                  className="text-brand-gray hover:text-brand-green p-0 h-auto font-normal block text-left"
+                >
+                  +974 77 651 997
+                </Button>
+                <Button
+                  variant="link"
+                  onClick={openWhatsApp2}
+                  className="text-brand-gray hover:text-brand-green p-0 h-auto font-normal block text-left"
+                >
+                  +974 66 690 877
+                </Button>
+              </div>
             </CardContent>
           </Card>
 
@@ -43,10 +56,10 @@ const Contact = () => {
               </div>
               <h3 className="font-semibold text-brand-teal mb-2">Email</h3>
               <a
-                href="mailto:info@deshanicleaning.lk"
+                href="mailto:deshanicleaning@gmail.com"
                 className="text-brand-gray hover:text-brand-green transition-colors"
               >
-                info@deshanicleaning.lk
+                deshanicleaning@gmail.com
               </a>
             </CardContent>
           </Card>
@@ -79,7 +92,7 @@ const Contact = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="cta" size="lg" onClick={openWhatsApp} className="text-lg px-8 py-4">
+          <Button variant="cta" size="lg" onClick={openWhatsApp1} className="text-lg px-8 py-4">
             Chat on WhatsApp
           </Button>
         </div>
