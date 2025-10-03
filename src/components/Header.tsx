@@ -44,8 +44,7 @@ const Header = () => {
             className="text-2xl font-bold cursor-pointer"
             onClick={() => scrollToSection("hero")}
           >
-            <span className="text-brand-teal">Deshani</span>
-            <span className="text-brand-green ml-1">Cleaning & Hospitality</span>
+            <span className="text-brand-green ml-1">Deshani Cleaning & Hospitality</span>
           </div>
 
           {/* Desktop Navigation */}
