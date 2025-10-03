@@ -1,73 +1,37 @@
-# Welcome to your Lovable project
+# Deshani Cleaning & Hospitality
 
-## Project info
+Professional cleaning, cooking, and babysitting services across Qatar. Reliable, trained staff for homes and offices.
 
-**URL**: https://lovable.dev/projects/4c31ceff-405f-4466-8327-7189b0f04c17
+## Services
 
-## How can I edit this code?
+- House Cleaning
+- Office Cleaning
+- Kitchen Cleaning
+- Window Cleaning
+- Room Cleaning
+- Deep Cleaning
+- Laundry and Ironing
+- Party Helpers/Cleaning
+- Babysitting
 
-There are several ways of editing your application.
+## Technologies Used
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/4c31ceff-405f-4466-8327-7189b0f04c17) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
 - React
-- shadcn-ui
+- TypeScript
+- Vite
 - Tailwind CSS
+- shadcn/ui
 
-## How can I deploy this project?
+## Development
 
-Simply open [Lovable](https://lovable.dev/projects/4c31ceff-405f-4466-8327-7189b0f04c17) and click on Share -> Publish.
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Start development server: `npm run dev`
+4. Build for production: `npm run build`
+5. Deploy: `npm run deploy` or push to main branch (GitHub Actions will deploy automatically)
 
-## Can I connect a custom domain to my Lovable project?
+## Deployment
 
-Yes, you can!
+The site is deployed to GitHub Pages at https://harinsub.github.io/deshani.github.io/
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Automatic deployment is set up via GitHub Actions on push to main branch.
