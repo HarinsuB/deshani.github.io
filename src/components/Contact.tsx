@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Phone, Mail, Clock, MapPin } from "lucide-react";
 
 const Contact = () => {
-  // Updated contact numbers for Qatar
+  // Updated contact numbers for Qatar - trigger deployment
   const openWhatsApp1 = () => {
     window.open("https://wa.me/97477651997", "_blank");
   };
