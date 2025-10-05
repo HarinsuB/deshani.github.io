@@ -88,23 +88,6 @@ Additional Details: ${formData.additionalDetails || 'None'}`;
       formData,
       message
     });
-
-    // Reset form after a delay
-    setTimeout(() => {
-      setFormData({
-        fullName: "",
-        location: "",
-        contactNumber: "",
-        email: "",
-        serviceType: "",
-        engagement: "",
-        bookingDate: "",
-        numberOfHours: "",
-        remark: "",
-        additionalDetails: ""
-      });
-      setIsSubmitted(false);
-    }, 5000);
   };
 
   // Success popup overlay with enhanced animations
@@ -186,6 +169,23 @@ Additional Details: ${formData.additionalDetails || 'None'}`;
                 const text = encodeURIComponent(message);
                 const whatsappUrl = `https://wa.me/${owner}?text=${text}`;
                 window.open(whatsappUrl, '_blank');
+
+                // Reset form after WhatsApp opens
+                setTimeout(() => {
+                  setFormData({
+                    fullName: "",
+                    location: "",
+                    contactNumber: "",
+                    email: "",
+                    serviceType: "",
+                    engagement: "",
+                    bookingDate: "",
+                    numberOfHours: "",
+                    remark: "",
+                    additionalDetails: ""
+                  });
+                  setIsSubmitted(false);
+                }, 2000);
               }}
               className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg font-medium flex items-center space-x-2 mx-auto"
             >
