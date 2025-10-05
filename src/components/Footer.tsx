@@ -17,8 +17,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="text-2xl font-bold mb-4">
-              <span className="text-white">Deshani</span>
-              <span className="text-brand-green ml-1">Cleaning & Hospitality</span>
+              <span className="text-brand-green ml-1">Deshani Cleaning Service</span>
             </div>
             <p className="text-white/80 mb-4">
               Trusted, professional services for homes and offices across Qatar.
@@ -39,7 +38,7 @@ const Footer = () => {
         {/* Trust Note */}
         <div className="border-t border-white/20 pt-8 mb-8">
           <div className="bg-white/10 rounded-lg p-6 text-center">
-            <h4 className="text-lg font-semibold mb-2">Why Choose Deshani?</h4>
+            <h4 className="text-lg font-semibold mb-2">Why Choose Deshani Cleaning Service?</h4>
             <p className="text-white/90">
               All our staff are carefully vetted, trained, and insured. We're committed to 
               providing reliable, trustworthy services that give you peace of mind.
@@ -49,9 +48,9 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="border-t border-white/20 pt-8 text-center text-white/60">
-          <p>&copy; {currentYear} Deshani Cleaning & Hospitality. All rights reserved.</p>
+          <p>&copy; {currentYear} Deshani Cleaning Service. All rights reserved.</p>
           <p className="mt-2">
-            Serving homes and offices across Qatar with pride since 2020.
+            Serving homes and offices across Qatar with pride since 2015.
           </p>
         </div>
       </div>

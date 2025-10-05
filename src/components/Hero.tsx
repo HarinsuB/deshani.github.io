@@ -26,7 +26,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-          Trusted Cleaning, Cooking & Baby Sitting
+          Trusted Cleaning, Laundry & Baby Sitting
           <span className="block text-brand-light-green">On Your Schedule</span>
         </h1>
         
