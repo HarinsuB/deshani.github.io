@@ -16,6 +16,8 @@ const BookingForm = () => {
     email: "",
     serviceType: "",
     engagement: "",
+    bookingDate: "",
+    numberOfHours: "",
     remark: "",
     additionalDetails: ""
   });
@@ -30,7 +32,7 @@ const BookingForm = () => {
   };
 
   const validateForm = () => {
-    const required = ['fullName', 'location', 'contactNumber', 'email', 'serviceType', 'engagement'];
+    const required = ['fullName', 'location', 'contactNumber', 'email', 'serviceType', 'engagement', 'bookingDate', 'numberOfHours'];
     for (const field of required) {
       if (!formData[field as keyof typeof formData]) {
         toast({
@@ -75,6 +77,8 @@ Contact: ${formData.contactNumber}
 Email: ${formData.email}
 Service: ${formData.serviceType}
 Engagement: ${formData.engagement}
+Booking Date: ${formData.bookingDate}
+Number of Hours: ${formData.numberOfHours}
 Remark: ${formData.remark || 'None'}
 Additional Details: ${formData.additionalDetails || 'None'}`;
 
@@ -111,6 +115,8 @@ Additional Details: ${formData.additionalDetails || 'None'}`;
         email: "",
         serviceType: "",
         engagement: "",
+        bookingDate: "",
+        numberOfHours: "",
         remark: "",
         additionalDetails: ""
       });
@@ -372,6 +378,37 @@ Additional Details: ${formData.additionalDetails || 'None'}`;
                         <Label htmlFor="full-time">Full-Time</Label>
                       </div>
                     </RadioGroup>
+                  </div>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="bookingDate" className="text-brand-teal font-medium">
+                      Booking Date *
+                    </Label>
+                    <Input
+                      id="bookingDate"
+                      type="date"
+                      value={formData.bookingDate}
+                      onChange={(e) => handleInputChange('bookingDate', e.target.value)}
+                      className="mt-1"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="numberOfHours" className="text-brand-teal font-medium">
+                      Number of Hours *
+                    </Label>
+                    <Input
+                      id="numberOfHours"
+                      type="number"
+                      value={formData.numberOfHours}
+                      onChange={(e) => handleInputChange('numberOfHours', e.target.value)}
+                      className="mt-1"
+                      placeholder="e.g., 4"
+                      min="1"
+                      required
+                    />
                   </div>
                 </div>
 
