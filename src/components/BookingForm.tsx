@@ -18,6 +18,7 @@ const BookingForm = () => {
     engagement: "",
     bookingDate: "",
     numberOfHours: "",
+    customHours: "",
     remark: "",
     additionalDetails: ""
   });
@@ -38,6 +39,27 @@ const BookingForm = () => {
         toast({
           title: "Missing Information",
           description: `Please fill in ${field.replace(/([A-Z])/g, ' $1').toLowerCase()}`,
+          variant: "destructive"
+        });
+        return false;
+      }
+    }
+
+    // Validate custom hours if selected
+    if (formData.numberOfHours === "Custom") {
+      if (!formData.customHours) {
+        toast({
+          title: "Missing Information",
+          description: "Please enter the number of hours",
+          variant: "destructive"
+        });
+        return false;
+      }
+      const hours = parseInt(formData.customHours);
+      if (isNaN(hours) || hours < 2) {
+        toast({
+          title: "Invalid Hours",
+          description: "Minimum 2 hours required",
           variant: "destructive"
         });
         return false;
@@ -69,6 +91,7 @@ const BookingForm = () => {
     setIsSubmitted(true);
 
     // Compose WhatsApp message
+    const hours = formData.numberOfHours === "Custom" ? formData.customHours : formData.numberOfHours;
     const message = `New Booking Request - Deshani Cleaning & Hospitality
 
 Name: ${formData.fullName}
@@ -78,7 +101,7 @@ Email: ${formData.email}
 Service: ${formData.serviceType}
 Engagement: ${formData.engagement}
 Booking Date: ${formData.bookingDate}
-Number of Hours: ${formData.numberOfHours}
+Number of Hours: ${hours}
 Remark: ${formData.remark || 'None'}
 Additional Details: ${formData.additionalDetails || 'None'}`;
 
@@ -154,6 +177,7 @@ Additional Details: ${formData.additionalDetails || 'None'}`;
             <Button
               onClick={() => {
                 const owner = "97477651997";
+                const hours = formData.numberOfHours === "Custom" ? formData.customHours : formData.numberOfHours;
                 const message = `New Booking Request - Deshani Cleaning & Hospitality
 
 Name: ${formData.fullName}
@@ -163,7 +187,7 @@ Email: ${formData.email}
 Service: ${formData.serviceType}
 Engagement: ${formData.engagement}
 Booking Date: ${formData.bookingDate}
-Number of Hours: ${formData.numberOfHours}
+Number of Hours: ${hours}
 Remark: ${formData.remark || 'None'}
 Additional Details: ${formData.additionalDetails || 'None'}`;
                 const text = encodeURIComponent(message);
@@ -181,6 +205,7 @@ Additional Details: ${formData.additionalDetails || 'None'}`;
                     engagement: "",
                     bookingDate: "",
                     numberOfHours: "",
+                    customHours: "",
                     remark: "",
                     additionalDetails: ""
                   });
@@ -399,19 +424,32 @@ Additional Details: ${formData.additionalDetails || 'None'}`;
                     />
                   </div>
                   <div>
-                    <Label htmlFor="numberOfHours" className="text-brand-teal font-medium">
-                      Number of Hours *
-                    </Label>
-                    <Input
-                      id="numberOfHours"
-                      type="number"
-                      value={formData.numberOfHours}
-                      onChange={(e) => handleInputChange('numberOfHours', e.target.value)}
-                      className="mt-1"
-                      placeholder="e.g., 4"
-                      min="1"
-                      required
-                    />
+                    <Label className="text-brand-teal font-medium">Number of Hours *</Label>
+                    <Select onValueChange={(value) => handleInputChange('numberOfHours', value)}>
+                      <SelectTrigger className="mt-1">
+                        <SelectValue placeholder="Select hours" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="2">2 hours (minimum)</SelectItem>
+                        <SelectItem value="4">4 hours</SelectItem>
+                        <SelectItem value="6">6 hours</SelectItem>
+                        <SelectItem value="8">8 hours</SelectItem>
+                        <SelectItem value="12">12 hours</SelectItem>
+                        <SelectItem value="Custom">Custom (minimum 2 hours)</SelectItem>
+                      </SelectContent>
+                    </Select>
+                    {formData.numberOfHours === "Custom" && (
+                      <Input
+                        id="customHours"
+                        type="number"
+                        value={formData.customHours}
+                        onChange={(e) => handleInputChange('customHours', e.target.value)}
+                        className="mt-2"
+                        placeholder="Enter hours (minimum 2)"
+                        min="2"
+                        required
+                      />
+                    )}
                   </div>
                 </div>
 
