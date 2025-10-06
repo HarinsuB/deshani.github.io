@@ -92,7 +92,7 @@ const BookingForm = () => {
 
     // Compose WhatsApp message
     const hours = formData.numberOfHours === "Custom" ? formData.customHours : formData.numberOfHours;
-    const message = `New Booking Request - Deshani Cleaning & Hospitality
+    const message = `New Booking Request - Deshani Cleaning Service
 
 Name: ${formData.fullName}
 Location: ${formData.location}
